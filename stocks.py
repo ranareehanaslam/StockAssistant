@@ -2,7 +2,7 @@
 from configparser import ParsingError
 from logging import raiseExceptions
 #from sympy import comp
-!pip install yfinance
+! pip install yfinance
 import yfinance as yf
 import requests
 import pandas as pd
