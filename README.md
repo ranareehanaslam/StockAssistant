@@ -1,6 +1,6 @@
 ---
 title: Tech Stocks Trading Assistant
-emoji: 🏢
+emoji: ⚡
 colorFrom: yellow
 colorTo: pink
 sdk: streamlit
