@@ -1,7 +1,5 @@
-#from asyncio.windows_events import NULL
 from configparser import ParsingError
 from logging import raiseExceptions
-#from sympy import comp
 import yfinance as yf
 import requests
 import pandas as pd
@@ -53,7 +51,7 @@ class Stock_Data(object):
                 '''
                 This method will get the current price only if the market is open.
                 '''
-                current_price = None #NULL
+                current_price = None 
                 if self.status_getter(Ticker) == "Open":
                         current_price = float(soup.find("bg-quote", class_="value").text.replace(',',''))
                         return current_price
@@ -79,9 +77,15 @@ class Stock_Data(object):
                 '''
                 data = yf.download(tickers = str(Ticker), period = "2y", interval = "1d")
                 df = pd.DataFrame(data)
-                # If the user wants to run the model to have a General Prediction of stocks with data of the last 2 years , uncomment the 2 lines below
-                # data = yf.download(tickers = str(Ticker),period = "2y", interval = "1d") #period = "2y", interval = "1d"
-                # df = pd.DataFrame(data)
+                            
+                # Prediction in the data we evaluate the model
+                # If the user wants to run the model with the data that has been evaluated and predicted for , uncomment the 2 lines below ( Rows 111-112 )
+                # Setting the start = 2022-08-26 and end = 2020-08-26 Yahoo Finance will return data from 25-8-2020 to 25-8-2022 (2 years period).
+                # In those data our model has been evaluated.
+
+                #data = yf.download(tickers = str(Ticker),end="2022-08-26", start="2020-08-26") 
+                #df = pd.DataFrame(data)
+                
                 return df
                 
 
@@ -111,7 +115,7 @@ class Stock_Data(object):
                         if counter <= 17:
                                 ticker = company_ticker
                                 title = art.text.strip()
-                                if title is None:#NULL:
+                                if title is None:
                                         break
                                 rows.append([ticker, title])
                                 counter = counter + 1
