@@ -1,4 +1,4 @@
-from asyncio.windows_events import NULL
+#from asyncio.windows_events import NULL
 from configparser import ParsingError
 from logging import raiseExceptions
 #from sympy import comp
@@ -53,7 +53,7 @@ class Stock_Data(object):
                 '''
                 This method will get the current price only if the market is open.
                 '''
-                current_price = NULL
+                current_price = None #NULL
                 if self.status_getter(Ticker) == "Open":
                         current_price = float(soup.find("bg-quote", class_="value").text.replace(',',''))
                         return current_price
@@ -111,7 +111,7 @@ class Stock_Data(object):
                         if counter <= 17:
                                 ticker = company_ticker
                                 title = art.text.strip()
-                                if title is NULL:
+                                if title is None:#NULL:
                                         break
                                 rows.append([ticker, title])
                                 counter = counter + 1
