@@ -79,7 +79,7 @@ class Stock_Data(object):
                 df = pd.DataFrame(data)
                             
                 # Prediction in the data we evaluate the model
-                # If the user wants to run the model with the data that has been evaluated and predicted for , uncomment the 2 lines below ( Rows 111-112 )
+                # If the user wants to run the model with the data that has been evaluated and predicted for , uncomment the 2 lines below 
                 # Setting the start = 2022-08-26 and end = 2020-08-26 Yahoo Finance will return data from 25-8-2020 to 25-8-2022 (2 years period).
                 # In those data our model has been evaluated.
 
