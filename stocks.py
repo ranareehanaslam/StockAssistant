@@ -1,7 +1,7 @@
 from asyncio.windows_events import NULL
 from configparser import ParsingError
 from logging import raiseExceptions
-from sympy import comp
+#from sympy import comp
 import yfinance as yf
 import requests
 import pandas as pd
