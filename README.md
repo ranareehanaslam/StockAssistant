@@ -1,7 +1,7 @@
 ---
 title: Tech Stocks Trading Assistant
 emoji: U+1F4B5
-colorFrom: turqoise
+colorFrom: red
 colorTo: green
 sdk: streamlit
 sdk_version: 1.10.0
