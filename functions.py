@@ -339,7 +339,9 @@ class Models(object):
             predictions = scaler.inverse_transform(predictions)
             #rmse = np.sqrt(np.mean(((predictions - y_test) ** 2)))
             global r_squared_score 
+            global rmse
             r_squared_score = round(r2_score(y_test, predictions),2)
+            rmse = np.sqrt(np.mean(((predictions - y_test) ** 2)))
             #print('Rmse Score: ', round(rmse),2)
             print('R2 Score: ', r_squared_score)
 
@@ -439,20 +441,42 @@ class Models(object):
             mode = 'lines',
             name = '7-day Prediction',
             line=dict(width=1,color="#EE3B3B"))
+        plot_3 = go.Scatter(
+            x = finaldfPredictions['Date'][:1],
+            y = finaldfPredictions['Adj Close'][:1],
+            mode = 'markers',
+            name = 'Latest Actual Closing Price',
+            line=dict(width=1))
 
         layout = go.Layout(
             title = 'Next 7 days stock price prediction of ' + str(ticker),
             xaxis = {'title' : "Date"},
             yaxis = {'title' : "Price ($)"}
         )
-        fig = go.Figure(data=[plot_1, plot_2], layout=layout)
+        fig = go.Figure(data=[plot_1, plot_2,plot_3], layout=layout)
         fig.update_layout(template='plotly_dark',autosize=True)
         fig.update_layout(legend=dict(
             orientation="h",
             yanchor="bottom",
             y=1.02,
             xanchor="right",
-            x=1
-            ))
+            x=1),
+            annotations = [dict(x=0.5,
+                                y=0, 
+                                xref='paper',
+                                yref='paper',
+                                text="Current In Sample R- Squared : " + str(r_squared_score*100) + " % \n",
+                                showarrow = False)],
+            xaxis=dict(showgrid=False),
+            yaxis=dict(showgrid=False)
+            
+
+                        )
+        fig.add_annotation(x=0.5, 
+                           y=0.05,
+                           xref='paper',
+                           yref='paper',
+                           text="Current In Sample Root Mean Square Error : " + str(round(rmse,2)) + " % ",
+                           showarrow=False)
         
         return fig
