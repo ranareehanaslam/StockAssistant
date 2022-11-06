@@ -18,7 +18,7 @@ with left_column:
                 "Paypal":"PYPL",
                 "Amazon":"AMZN",
                 "Spotify":"SPOT",
-                "Twitter":"TWTR",
+                #"Twitter":"TWTR",
                 "AirBnB":"ABNB",
                 "Uber":"UBER",
                 "Google":"GOOG"
