@@ -359,8 +359,8 @@ class Models(object):
             LSTM_trainer(6, 0.1, 120,2, 20, 25)    
         elif ticker == 'SPOT':
             LSTM_trainer(9, 0.2, 200,5, 20, 40)
-        elif ticker == 'TWTR' :
-            LSTM_trainer(15, 0.2, 100,4,20, 40)
+        #elif ticker == 'TWTR' :
+         #   LSTM_trainer(15, 0.2, 100,4,20, 40)
         elif ticker == 'UBER':
             LSTM_trainer(15, 0.2, 100,7,20, 40)
         elif ticker == 'ABNB':
