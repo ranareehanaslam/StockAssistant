@@ -19,7 +19,7 @@ with left_column:
                 "Amazon":"AMZN",
                 "Spotify":"SPOT",
                 #"Twitter":"TWTR",
-                "AirBnB":"ABNB",
+                "adanipower":"adanipower.ns",
                 "Uber":"UBER",
                 "Google":"GOOG"
                 }
