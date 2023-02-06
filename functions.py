@@ -363,7 +363,7 @@ class Models(object):
          #   LSTM_trainer(15, 0.2, 100,4,20, 40)
         elif ticker == 'UBER':
             LSTM_trainer(15, 0.2, 100,7,20, 40)
-        elif ticker == 'ABNB':
+        elif ticker == 'adanipower.ns':
             LSTM_trainer(15, 0.2, 120,8,20, 40)
         elif ticker == 'GOOG':
             LSTM_trainer(15, 0.2, 100,3,20, 25)
